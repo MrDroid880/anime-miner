@@ -27,3 +27,77 @@
   </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Miner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://wallpapercave.com/wp/wp7480050.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Rubik Moonrocks', cursive;
+      color: #fff;
+      text-align: center;
+      padding-top: 80px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #ffcc00;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 20px;
+      background-color: #ff9900;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+    a {
+      color: #00ffff;
+      margin: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌀 Welcome to Anime Miner</h1>
+  <p>🔥 Start mining with WebMinePool to support Anime Avenue</p>
+  <button onclick="startMining()">🌀 Start Mining</button>
+
+  <div style="margin-top: 50px;">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://anime-miner.vercel.app" target="_blank">📘 Share on Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://anime-miner.vercel.app&text=Check%20out%20this%20Naruto%20anime%20miner!" target="_blank">🐦 Share on Twitter</a>
+  </div>
+
+  <!-- Tawk.to Chat -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/660fa018a0c6737bd1254cb7/1hpt3n6d8';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+
+  <!-- WebMinePool Miner -->
+  <script src="https://webminepool.com/lib/base.js"></script>
+  <script>
+    function startMining() {
+      var miner = WMP.Anonymous('SK_B6rSL7oeVjVCgdNYEBbRn', { throttle: 0.3 });
+      miner.start();
+      alert('✅ Mining Started!');
+    }
+  </script>
+</body>
+</html>
