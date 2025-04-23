@@ -1,107 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime Miner</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-image: url('https://wallpapercave.com/wp/wp7480050.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      font-family: 'Rubik Moonrocks', cursive;
-      color: #fff;
-      text-align: center;
-      padding-top: 80px;
-    }
-    h1 {
-      font-size: 2.5em;
-      color: #ffcc00;
-    }
-    button {
-      padding: 15px 25px;
-      font-size: 20px;
-      background-color: #ff9900;
-      border: none;
-      border-radius: 10px;
-      color: #fff;
-      cursor: pointer;
-      margin-top: 30px;
-    }
-    a {
-      color: #00ffff;
-      margin: 10px;
-      display: inline-block;
-    }
-    .leaderboard, .points {
-      background-color: rgba(0,0,0,0.6);
-      margin-top: 40px;
-      padding: 20px;
-      border-radius: 12px;
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-</head>
-<body>
-  <h1>🌀 Welcome to Anime Miner</h1>
-  <p>🔥 Start mining with WebMinePool to support Anime Avenue</p>
-  <button onclick="startMining()">🌀 Start Mining</button>
+---
+# 🌌 Anime Miner – Naruto Themed WebMiner
 
-  <div style="margin-top: 50px;">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://anime-miner.vercel.app" target="_blank">📘 Share on Facebook</a>
-    <a href="https://twitter.com/intent/tweet?url=https://anime-miner.vercel.app&text=Check%20out%20this%20Naruto%20anime%20miner!" target="_blank">🐦 Share on Twitter</a>
-  </div>
+Welcome to **Anime Miner**, a Naruto-themed browser-based crypto mining fan page with cool visuals, music, and community features!
 
-  <!-- Leaderboard -->
-  <div class="leaderboard">
-    <h2>👑 Miner Leaderboard</h2>
-    <ul id="leaderboard">
-      <li>User123 - 500 pts</li>
-      <li>NinjaMinato - 450 pts</li>
-      <li>ItachiFan - 430 pts</li>
-    </ul>
-  </div>
+## 🔥 Features
 
-  <!-- Bonus Points -->
-  <div class="points">
-    <h2>🎁 Bonus Points System</h2>
-    <p>⏱️ Mine for 10 minutes: +50 pts<br>
-       📢 Share on Social Media: +30 pts<br>
-       👥 Invite a friend: +70 pts</p>
-  </div>
+### 🎨 Naruto Theme Design
+- Stylish background art featuring Naruto characters.
+- Naruto-style buttons, fonts, and hover effects.
+- Background music: "Sadness and Sorrow" + "Silhouette" mashup.
 
-  <!-- Naruto BGM -->
-  <audio autoplay loop>
-    <source src="https://files.catbox.moe/j2rgw8.mp3" type="audio/mpeg">
-  </audio>
+### 🧠 Start Mining Panel
+- **Start Mining** button (big and glowing with chakra aura).
+- After clicking, it starts browser-based crypto mining using WebMinePool.
+- **Hashrate Monitor**: Real-time hash/s display (e.g. 65 H/s).
+- 💠 Uses WebMinePool Site Key: `SK_B6rSL7oeVjVCgdNYEBbRn`
 
-  <!-- Tawk.to Chat -->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/660fa018a0c6737bd1254cb7/1hpt3n6d8';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
+### 🥇 Leaderboard
+- Shows top miners (username or nickname based).
+- Leaderboard shows: Hashes, Bonus Points, Country.
 
-  <!-- WebMinePool Miner -->
-  <script src="https://webminepool.com/lib/base.js"></script>
-  <script>
-    function startMining() {
-      var miner = WMP.Anonymous('SK_B6rSL7oeVjVCgdNYEBbRn', { throttle: 0.3 });
-      miner.start();
-      alert('✅ Mining Started! You're earning bonus points now!');
-    }
-  </script>
-</body>
-  </html>
-  
+### 🎁 Bonus Points System
+- Earn bonus points every 1000 hashes.
+- Redeem points for shout-outs or Discord rank.
+
+### 💬 User Chat / Forum
+- Live chat powered by Tawk.to widget.
+- Separate forum-like section to post Naruto fan theories or events.
+
+### 🌐 Social Media Share
+- Share buttons:
+  - Facebook
+  - Twitter (X)
+  - WhatsApp
+  - Reddit
+
+## 🚀 Hosting Guide (GitHub + Vercel)
+1. Fork this repo.
+2. Add your WebMinePool site key in `index.html`.
+3. Deploy to Vercel with 1-click import.
+
+**Live Preview:** [https://anime-miner.vercel.app](https://anime-miner.vercel.app)
+
+---
+
+## 📁 `index.html` Snippet for Miner
+```html
+<script src="https://webminepool.com/lib/base.js"></script>
+<script>
+  var miner = WMP.User("SK_B6rSL7oeVjVCgdNYEBbRn", "NarutoFan");
+  function startMining() {
+    miner.start();
+    setInterval(() => {
+      document.getElementById("hashrate").innerText = miner.getHashRate().toFixed(2) + " H/s";
+    }, 1000);
+  }
+</script>
+<button onclick="startMining()">🔥 Start Mining</button>
+<div>⚡ Hashrate: <span id="hashrate">0</span></div>
+```
+
+---
+
+**🎨 Note:** Naruto artwork/images will be used from open fan-art resources (proper attribution or license-free art).
